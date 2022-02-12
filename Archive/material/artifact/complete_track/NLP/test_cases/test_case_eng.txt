@@ -1,0 +1,14 @@
+Between 1500 and 2000 time units, the value of signal RWs_angular_momentum shall be less than 0.35.
+Spd_Tgt is always in the range [0, 1000].
+V_Sply is always in the range [10, 14].
+If the value of signal not_Eclipse is equal to 0, then the value of signal sun_currents shall be equal to 0.
+If the value of signal RWs_angular_momentum is greater than 0.35, then the value of signal RWs_torque shall be equal to 0.
+If the value of signal currentADCSMode is equal to NMC, then the value of signal control_error shall be greater than or equal to 10.
+If the value of signal control_error is less than 10, then the value of signal currentADCSMode shall be equal to NMF.
+If the value of signal currentADCSMode is equal to NMF, then the value of signal control_error shall be less than or equal to 15.
+If the value of signal not_Eclipse is equal to 1, then the value of signal sun_angle shall be less than 45.
+Whenever Op_Cmd is set to Running then in response Op_Ind should be set to Green without any delay.
+While V_Mot is 0, then all of the following conditions hold: Spd_Act is 0.
+Whenever Op_Cmd changes to Passive then in response Spd_Act changes to 0 after at most 500 time units.
+Whenever Op_Cmd changes to Running then in response Spd_Act should enter the range [0, 1000] at some moment after at most 500 time units.
+Whenever V_Mot enters the range [1, 12] then in response starting after at most 100 time units Spd_Act must be in the range [100, 1000].
