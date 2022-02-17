@@ -1,0 +1,131 @@
+English,STL
+The engine speed never reaches w
+The engine and the vehicle speed never reaches omega and v, respectively
+There should be no transition from gear two to gear one and back to gear two in less than 2.5 sec
+After shifting into gear one, there should be no shift from gear one to any other gear within 2.5 sec
+When shifting into any gear, there should be no shift from gear one to any other gear within 2.5 sec
+If engine speed is always less than omega, then vehicle speed can not exceed v in less than T sec
+Within T sec the vehicle speed is above v and from that point on the engine speed is always less than w
+A gear increase from the first to fourth in under 10 secs, ending in an RPM above w whithin 2 seconds of that, should result in a vehicle speed above v
+The fuel flow rate should not be zero for more than 1 sec within the next 100 sec period
+Always, if the air-to-fuel ratio output goes out of bounds, then within 1 sec it should settle inside the bounds and stay there for a sec
+The value of signal currentADCSMode shall be equal to NMC, NMF or SM
+The value of signal pointingErrorAbove20 shall be equal to 0 or 1
+The value of signal pointingErrorUnder15 shall be equal to 0 or 1
+The value of signal RWs_angular_velocity shall be equal to 816.814 rad/s
+Starting from 2000 s, the value of signal pointing_error shall be less than 2
+Between 1500 s and 2000 s, the value of signal RWs_angular_momentum shall be less than 0.35 Nm/s
+At 2000 s the value of signal pointing_error shall be between 0 and delta
+Between 2000 s and 7400 s, in signal pointing_error there shall exist a spike with a maximum width of 20 s
+The modulus of signal sat_init_angular_velocity_degree shall be less than or equal to 1.5 m/s
+The modulus of signal sat_real_angular_velocity shall be less than of equal to 1.5 m/s
+The modulus of signal sat target attitude shall be equal to 1
+The modulus of signal sat target angular velocity shall be less than or equal to 1.5 m/s
+The modulus of signal sat estimated attitude shall be equal to 1
+The modulus of signal sat estimated angular velocity shall be less than or equal to 1.5 m/s
+The modulus of signal set angular velocity measured shall be less than or equal to 1.5 m/s
+The modulus of signal earth mag field in body measured shall be less than or equal to 60000 nT
+The modulus of signal sun direction ECI shall be equal to 1
+The modulus of signal sat target angular velocity safe spin mode shall be less than or equal to 1.5m/s
+The modulus of signal RWs torque shall be equal to 0.015 Nm
+The elements sum of vector sun sensor availability elements shall be at most 3
+At 2000 s, the angular difference between signals q real and q estimate attitude shall be between 0 and delta
+The difference between signal sat_estimated_angular_velocity and signal_sat_real_angular_velocity shall be equal to 0 rad/s
+The difference between signal RWs_torque and the derivative of signal RWs_angular_momentum shall be equal to 0 Nm
+If the value of signal not_Eclipse is equal to 0, then the value of signal sun_currents shall be equal to 0
+If the value of signal pointingErrorUnder15 is equal to 1, then the value of signal pointingErrorAbove20 shall be different from 1
+If the value of signal pointingErrorAbove20 is equal to 1, then the value of signal pointingErrorUnder15 shall be different from 1
+If the value of signal RWs_command is equal to 0, then the value of signal RWs_angular_velocity shall monotonically decrease to 0 rad/s within 60 s
+If the value of signal RWs_angular_momentum is greater than 0.35 Nm/s, then the value of signal RWs_torque shall be equal to 0 Nm/s
+If the value of signal currentADCSMode is equal to NMC, then the value of signal control error shall be greater than or equal to 10
+If the value of signal control error is less than 10°, then the value of signal currentADCSMode shall be equal to NMF
+If the value of signal currentADCSMode is equal to NMF, then the value of signal control error shall be less than or equal to 15°
+If the value of signal currentADCSMode is equal to NMF, then if the value of signal RWs_command becomes greater than 0, then the value of signal pointing_error shall be less than 2° within 180 s
+If the value of signal currentADCSMode is equal to NMF, then if the value of signal RWs_command becomes greater than 0, then the value of signal control error shall be less than 0.5 within 180 s
+If the value of signal currentADCSMode is equal to NMF, then if the value of signal Not_eclipse becomes 1, then the value of signal knowledge_error shall be less than 1 within at most 900 s
+If the value of signal currentADCSMode is equal to SM, then if the value of signal RWs_command becomes greater than 0, then the value of signal RWs_angular_momentum shall be less than 0:25Nm=s within at most 900 s
+If the value of signal currentADCSMode is equal to SM, then the difference between signal real_Omega and signal target_Omega shall be equal to 0 within at most 10799 s
+If the value of signal not_Eclipse is equal to 1, then the value of signal sun_angle shall be less than 45°
+If, starting from 16200 s, the value of signal pointing_error goes below the pointing_accuracy threshold of 2°, then in signal pointing_error there shall exist a spike with a maximum width of 600 s in an interval of 5400 s
+The first requirement (26) specifies the maximum permitted overshoot or undershoot
+The STL requirement (27) specifies that after each rising or falling edge of the pulse, the signal settles within η seconds, and remains within the settling region (that we define as λref ± 0.02λref ) until the next rising or falling edge of the pulse can occur. (See Fig. 2(b) for an illustration of these requirements).
+Thus, requirement (29) states that the RMS error at time T (i.e., the accumulated error over the duration (τI , T )) is less than some value c.
+Thus, this set of tolerances leads to the worst case behavior for the undershoot on μ, and requirement (30) specifies the worst-case permitted undershoot −cr .
+Thus, this set of tolerances leads to the worst case overshoot on μ, and requirement (31) specifies the worst-case permitted overshoot cl.
+As λ in the power mode is regulated in an open-loop fashion and has a different set-point, we want to ensure that the controller is able to settle to a value close to λref within a specified time after switching back from the power mode. The input profile pulse(a, ζ , d) for this requirement constrains a differently; the constraint used here is 8.8◦ ≤ a ≤ 90◦. This allows the controller to transition to the power mode and stay in that mode for approximately ζ2 seconds. Requirement (32) characterizes this settling-time requirement.
+We omit the requirement on settling time for brevity, and in (33) specify that the maximum undershoot/overshoot on λ is within 20% of λpwr.
+When the controller is in the startup or sensor_fail mode, the controller uses open-loop control. The requirements on λ are similar in form to the ones in normal mode, but with relaxed bounds on the settling region and transient excursions (we omit the latter for brevity). The input profile pulse(a, ζ , d) has similar constraints on a as the one for requirements (26),(27).
+Whenever we detect another vehicle in front of us, and this vehicle has been the preceding vehicle for at least T seconds, we expect the distance d to this vehicle to stay within a corridor of ε around the desired distance d_des.
+Whenever we detect another vehicle in front of us, the distance d to this vehicle shall reach a corridor of ε around the desired distance ddes within T seconds and shall remain within this corridor.
+Whenever the set speed vset is increased, the actual velocity v shall have passed 90 percent of the jump height Δjump after vset T seconds, and analogously for decreases in set speed.
+Whenever we detect another vehicle in front of us, we shall respect a velocity-dependent safe minimum distance d_safe(v) as long as the cut-in was far enough away to allow this.
+The vehicle shall stay within the lane boundaries, if this is possible with the actuators it is equipped with.
+For any desired rack position trajectory rdes(t) such that the desired rack position remains within +/−rmax and the desired rack speed vdes (t) remains within +/−vmax , the actual rack position r(t) shall remain within a corridor [rl(t),ru(t)] around the desired rack position rdes (t).
+the motion performance property requires that agent i enter the goal region within Tf time steps
+the safety property ensures that agent i shall never encounter obstacle regions
+The above specification requires that, at all time steps, the cart displacement shouldn’t exceed a magnitude of 0.1 and the angular displacement of the pole should not exceed a magnitude of 12◦.
+We encode this specification using the following STL formula, which requires that the cart should eventually reach the top of the right side hill
+The below specification is defined solely on the position of the end-effector, denoted (x, y, z), and the position of the goal (xg, yg, zg):
+We have the following requirements for the cruise controller
+We evaluate the controller using the following specifica-tions
+visit regions A and B every 3 minutes along a mission horizon of 10 minutes
+Alternate between region A and B every two seconds, globally over the per
+eventually visit RegA or RegB within [0,10] and eventually visit RegC within [11,20] and always avoid Obs
+for all t ∈ [0,15], eventually visit RegA every [t,t+7] and eventually visit RegB every [t,t+ 7], and always stay in the Safe region
+the following property must be satisfied at a time t between 0 and 38.9 hours: the blast pressure wp must be smaller than 0.88 at least once within the next 2.22 hours (i.e., during the time interval [t, t + 2.22]) and always be larger than 0.9 within the next 2.22 and 11.4 hours (i.e., during the time interval [t + 2.22, t + 11.4])
+Table 3 Fault Mode: Low stock line - phi_L The following property must be true at a time instance t between 0 and 14 400 seconds: within the next 6208 seconds, the total pressure drop must always be larger than 0.444 (normalized value) and the total temperature drop must always be smaller than 0.0211 (normalized value)
+Table 3 Fault Mode:Cooling - phi_C
+Table 3 Fault Mode:Heating - phi_H
+Table 3 Fault Mode:Heating - phi_Ch
+Table 4 phi_H-5
+Table 4 phi_H-6
+Table 4 phi_H-7
+Table 4 phi_H-8
+The absolute value of a continuous signal x is always less than 6
+When the (Boolean) trigger rises, within 600 time units |x| has to drop below 1 and stay like that for at least 300 time units
+whenever the vt signal crosses the threshold of 5, both vt and id have to remain continuously above 4.5 and 5 · 10−6 respectively, until id falls below 5e − 6
+wl is below 0.1 but will jump to above 3.8 within 15μs and the cell is not in the programming mode (translated by the absolute value of the source current id being below 30 · 10−6). whenever not_pgm happens, the bitline signal bl should cross 3.8 before the end of the simulation, and remain above that threshold continuously until the word line wl goes above 6, which should happen within 300 and 1500μs from the bl crossing.
+whenever the programming procedure starts (translated by the crossing of 3.8 threshold by the bitline signal bf), bitline should not fall below that threshold until the signal vt becomes higher than 5 and the absolute value of the source current id goes below 5 · 10−6.
+We first define the erasing condition that holds whenever the wordline signal wl is lower than −6 and p-well pw is above 5. whenever an erasing condition holds, the pointwise distance between the source s and p-well pw voltages has to be smaller than 0.1 and the value of pw should not be greater than 0.83 from the value of bitline bl.
+whenever the bitline bl and word- line wl signals are above 2.5 threshold, the p-well signal pw has to be below −0.5
+whenever DQS crosses the VIH(DC)min threshold from above,thepreviouscrossingofVIL(AC)max bythesignalDQ from above should precede it by at least a period of time of tDS.
+1. we need to detect how much time these signals re-main in their falling slew region (between VREF(DC) and VIL(AC)max crossing VREF(DC) from above). This can be done with the following formula, which holds if the signal is in the falling slew region, as shown in Figure 24; 2.Hence, the falling slew rates of DQ and DQS are in the range between 1 and 2V /ns if the following formulas hold  3; Finally, the main property for the falling setup time, pro-vided that DQ and DQS falling slew rates are in the range between 1 and 2V /ns, is expressed as
+Whenever Op_Cmd changes to Passive then in response Spd_Act changes to 0 rpm after at most 500 ms
+Whenever Op_Cmd changes to Running then in response Spd_Act enters the range [ 0 rpm , 1000 rpm ] after at most 500 ms
+Whenever Op_Cmd is set to Running then in response Op_Ind changes to Green without any delay
+Spd_Tgt is always in the range [ 0 rpm, 1000 rpm ]
+V_Sply is always in the range [ 10 V, 14 V ]
+Op_Cmd is always in {Running, Passive}
+Whenever V_Mot is 0 V (once) for more than 20 ms then in response starting after at most 100 ms Spd_Act is always 0 rpm for at least 20 ms, original: Whenever V_Mot is (once) 0 V for more than 20 ms then in response Spd_Act is always 0 rpm for at least 20 ms starting after at most 100 ms
+While V_Mot is 0 V, all of the following conditions hold: Spd_Act is 0 rpm
+Whenever V_Mot enters the range [ 1 V , 12 V ] then in response starting after at most 100 ms Spd_Act is in the range [ 100 rpm , 1000 rpm ], original: Whenever V_Mot enters the range [ 1 V , 12 V ] then in response Spd_Act is always in the range [ 100 rpm , 1000 rpm ] starting after at most 100 ms
+Whenever Spd_Act is always less than 100 rpm for at least 50ms starting without any delay then in response Spd_Act_Meas is always 0 rpm until Spd_Act increases above 100 rpm starting after at most 5ms
+Whenever Spd_Act_Meas is less than 1 rpm for more than 20 ms then in response PWM is always 0 V for at least 20 ms starting after at most 100 ms
+Whenever Spd_Act_Meas is less than 1 rpm for more than 20 ms then in response starting without any delay PWM is always 0 V until Spd_Act_Meas increases above 0 rpm
+Whenever Op_Cmd is Running and Spd_Tgt is in [0 rpm, 1000 rpm] for at least 20 ms then in response PWM enters the range [ 1 V , 12 V ] within 200 ms
+Whenever PWM is 0 V for more than 20 ms then in response V_Mot is always 0 V for at least 20 ms starting after at most 100 ms
+Whenever PWM is in the range [1 V, 12 V] for more than 20 ms then in response V_Mot is always in the range [1 V, 12 V ] starting after at most 100 ms
+Whenever V_Mot decreases below 1 V then in response Trq does not occur for at least 20 ms starting after at most 100 ms
+5.3.1. Output lamping of inductive load - a. When switching OFF inductive loads with high side switches, the voltage VOUT drops below ground potential.
+5.3.1. Output lamping of inductive load - b. To prevent the destruction of the device by avalanche due to high voltages, there is a voltage clamp mechanism ZDS(AZ) implemented that limits negative output voltage to a certain level (VS - VDS(AZ)). Please refer to Figure 10 and Figure 11 for details.
+5.4. Inverse current capability - a. In case of inverse current, meaning a voltage VINV at the OUT put higher than the supply voltage VS, a current IINV will flow from output to VS pin via the body diode of the power transistor. 5.4. Inverse current capability - b. The output stage follows the state of the IN pin, except if the IN pin goes from OFF to ON during inverse.
+5.4. Inverse current capability - c. In that particular case, the output stage is kept OFF until the inverse current disappears.
+5.4. Inverse current capability - d. Nevertheless, (In that particular case), the current IINV should not be higher than IL(INV). Otherwise, the second channel can be corrupted and erratic behavior can be observed.
+5.4. Inverse current capability - e. If the affected channel is OFF, the diagnostic will detect an open load at OFF.
+5.4. Inverse current capability - e. If the affected channel is ON, the diagnostic will detect open load at ON (the overtemperature signal is inhibited).
+6.1. Loss of ground protection - a. In case of loss of the module ground and the load remains connected to ground, the device protects itself by automatically turning OFF (when it was previously ON) or remains OFF.
+6.1. Loss of ground protection - b. In case of loss of module or device ground, a current (IOUT(GND)) can flow out of the DMOS.
+6.2. Undervoltage protection - a. If the supply voltage is between VS(UV) and VS(OP), the undervoltage mechanism is triggered.
+6.2. Undervoltage protection - b. If the supply voltage is below the undervoltage mechanism VS(UV), the device is OFF (turns OFF).
+6.2. Undervoltage protection - c. As soon as the supply voltage is above the undervoltage mechanism VS(OP), then the device can be switched ON.
+6.2. Undervoltage protection - d. The diagnosis is not guaranteed until VS is in the VNOM range.
+6.3. Overvoltage protection - a. In case of supply voltage higher than VS(AZ), the power transistor switches ON and the voltage across the logic section is clamped. As a result, the internal ground potential rises to VS - VS(AZ). Due to the ESD Zener diodes, the potential at pin INx, DSEL and DEN rises almost to that potential, depending on the impedance of the connected circuitry.
+6.3. Overvoltage protection - b. In the case the device was ON, prior to overvoltage, the BTS5016-2EKA remains ON.
+6.3. Overvoltage protection - c. In the case the BTS5016-2EKA was OFF, prior to overvoltage, the power transistor can be activated.
+6.3. Overvoltage protection - d. In the case the supply voltage is in above VBAT(SC) and below VDS(AZ), the output transistor is still operational and follows the input.
+6.4. Reverse Polarity Protection - In case of reverse polarity, the intrinsic body diodes of the power DMOS causes power dissipation. a. The current into the ground path and the logic pins has to be limited to the maximum current.
+6.5.2Temperature Limitation in the Power DMOS - a. Each channel incorporates both an absolute (TJ(SC)) and a dynamic (TJ(SW)) temperature sensor. Activation of either sensor will cause an overheated channel to switch OFF to prevent destruction. b. Any protective switch OFF latches the output until the temperature has reached an acceptable value. Figure 19 gives a sketch of the situation. The ΔTSTEP describes the device’s warming, due to the overcurrent in the channel. c. A retry strategy is implemented such that when the DMOS temperature has cooled down enough, the switch is switched ON again, if the IN pin signal is still high (restart behavior).
+6.5.2Temperature Limitation in the Power DMOS - a. Each channel incorporates both an absolute (TJ(SC)) and a dynamic (TJ(SW)) temperature sensor. Activation of either sensor will cause an overheated channel to switch OFF to prevent destruction. b. Any protective switch OFF latches the output until the temperature has reached an acceptable value. Figure 19 gives a sketch of the situation. The ΔTSTEP describes the device’s warming, due to the overcurrent in the channel. c. A retry strategy is implemented such that when the DMOS temperature has cooled down enough, the switch is switched ON again, if the IN pin signal is still high (restart behavior).
+6.5.2Temperature Limitation in the Power DMOS - a. Each channel incorporates both an absolute (TJ(SC)) and a dynamic (TJ(SW)) temperature sensor. Activation of either sensor will cause an overheated channel to switch OFF to prevent destruction. b. Any protective switch OFF latches the output until the temperature has reached an acceptable value. Figure 19 gives a sketch of the situation. The ΔTSTEP describes the device’s warming, due to the overcurrent in the channel. c. A retry strategy is implemented such that when the DMOS temperature has cooled down enough, the switch is switched ON again, if the IN pin signal is still high (restart behavior).
+6.5.2Temperature Limitation in the Power DMOS - a. Each channel incorporates both an absolute (TJ(SC)) and a dynamic (TJ(SW)) temperature sensor. Activation of either sensor will cause an overheated channel to switch OFF to prevent destruction. b. Any protective switch OFF latches the output until the temperature has reached an acceptable value. Figure 19 gives a sketch of the situation. The ΔTSTEP describes the device’s warming, due to the overcurrent in the channel. c. A retry strategy is implemented such that when the DMOS temperature has cooled down enough, the switch is switched ON again, if the IN pin signal is still high (restart behavior).
+6.5.2Temperature Limitation in the Power DMOS - a. Each channel incorporates both an absolute (TJ(SC)) and a dynamic (TJ(SW)) temperature sensor. Activation of either sensor will cause an overheated channel to switch OFF to prevent destruction. b. Any protective switch OFF latches the output until the temperature has reached an acceptable value. Figure 19 gives a sketch of the situation. The ΔTSTEP describes the device’s warming, due to the overcurrent in the channel. c. A retry strategy is implemented such that when the DMOS temperature has cooled down enough, the switch is switched ON again, if the IN pin signal is still high (restart behavior).
