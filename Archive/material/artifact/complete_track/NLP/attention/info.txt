@@ -1,0 +1,4 @@
+- change loss computation
+- use lr dynamic scheduling with factor=0.1
+- use gradient clipping
+- max epoch = 10
