@@ -1,3 +1,0 @@
-- change loss computation
-- use default lr dynamic scheduling with factor=2
-- max epoch = 40
