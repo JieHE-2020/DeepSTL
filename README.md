@@ -1,5 +1,7 @@
 # DeepSTL
-This is the repository of our accepted paper in ICSE2022: DeepSTL - From English Requirements to Signal Temporal Logic.
+This is the repository of our accepted paper in ICSE2022:
+
+DeepSTL - From English Requirements to Signal Temporal Logic.
 
 Please go to:
 /Archive/documents/README.pdf 
