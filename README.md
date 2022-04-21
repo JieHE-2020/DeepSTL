@@ -1,18 +1,25 @@
-# DeepSTL
 This is the repository of our accepted paper in ICSE2022:
 
 DeepSTL - From English Requirements to Signal Temporal Logic.
 
-Please go to:
-/Archive/documents/README.pdf 
-to know how to use this repository. We provide very detailed guidance.
+Since this repository incorporates the trained model, in order to keep file integrity, we uploaded a .zip file instead of a folder.
 
-We also uploaded our artifact to figshare, which includes a virtual machine with all environement set up. Please visit this link:
+After extracting Archive.zip, please go to:
+
+/Archive/documents/README.pdf
+
+to know how to use this repository. We have provided very detailed guidance.
+
+For quickly checking the results in the main paper, please refer to Section 4.1 in README.pdf. The results can be slightly different across different platforms and software versions due to numerical precision or other unavoidable factors.
+
+We mentioned our experimental environment in Section 2. In this section, We also provided guidance on how to set up the environment from scratch.
+
+We also uploaded our artifact to figshare, which includes a virtual machine with all environment set up. Please visit this link and ALWAYS download the latest version:
 
 https://figshare.com/articles/software/Artifact_of_Paper_DeepSTL_-_From_English_Requirements_to_Signal_Temporal_Logic_/19091282
 
-The contents in this responsitory are consistant with the artifact in figshare, except that a virtual machine is not included in the following folder: 
-/Archive/material/VM.
+The contents in this repository are consistent with the artifact in figshare, except that a virtual machine is not included in the following folder: 
+/Archive/material/VM. 
 
 The presentation slides (long version) are upload. The corresponding video link is:
 
