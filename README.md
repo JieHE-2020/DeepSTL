@@ -20,6 +20,6 @@ This is the repository of our accepted paper in ICSE2022: DeepSTL - From English
     
          /Archive/material/VM
 
-3.  The presentation slides (long version) are uploaded. The corresponding video link is:
+3.  A long version of the presentation slides are uploaded (presentation.pdf). The corresponding video link is:
 
      https://youtu.be/NbI9YxFCQj0
