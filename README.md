@@ -21,6 +21,6 @@ https://figshare.com/articles/software/Artifact_of_Paper_DeepSTL_-_From_English_
 The contents in this repository are consistent with the artifact in figshare, except that a virtual machine is not included in the following folder: 
 /Archive/material/VM. 
 
-The presentation slides (long version) are upload. The corresponding video link is:
+The presentation slides (long version) are uploaded. The corresponding video link is:
 
 https://youtu.be/NbI9YxFCQj0
