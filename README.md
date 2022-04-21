@@ -8,7 +8,7 @@ This is the repository of our accepted paper in ICSE2022: DeepSTL - From English
 
    In this read-me document, We have provided very detailed guidance.
 
-*  For quickly checking the results in the main paper, please refer to Section 4.1 in README.pdf. The results can be slightly different across   different platforms and software versions due to numerical precision or other unavoidable factors.
+*  For quickly checking the results in the main paper, please refer to Section 4.1 in README.pdf. Nearly all results can be reproduced on different platforms. A detailed statement of reproducibility can be found in the introduction part of Section 4 of the read-me document.
 
 *  We mentioned our experimental environment in Section 2. In this section, We also provided guidance on how to set up the environment from scratch.
 
@@ -20,6 +20,6 @@ This is the repository of our accepted paper in ICSE2022: DeepSTL - From English
     
          /Archive/material/VM
 
-3.  A long version of the presentation slides are uploaded (presentation.pdf). The corresponding video link is:
+3.  The presentation slides (long version) are uploaded. The corresponding video link is:
 
      https://youtu.be/NbI9YxFCQj0
